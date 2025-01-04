@@ -14,13 +14,17 @@ const displayProducts = (products) => {
     div.classList.add("card");
     div.innerHTML = `
       <div>
-        <img src="${product.strDrinkThumb}" alt="" style="height: 100%; width: 100%; ">
+        <img src="${
+          product.strDrinkThumb
+        }" alt="" style="height: 100%; width: 100%; ">
       </div>
       <h2>Name:${product.strGlass}</h2>
       <p>Category: ${product.strCategory}</p>
-      <p >Instructor: ${product.strInstructions}</p>
+      <p >Instructor: ${product.strInstructions.slice(0, 100)}</p>
         <button onclick="addToCart(${product.idDrink},this)">Select</button>
-        <button onclick="showDetails(${product.idDrink})" class="btn btn-primary">Details</button>
+        <button onclick="showDetails(${
+          product.idDrink
+        })" class="btn btn-primary">Details</button>
 
     `;
     productContainer.appendChild(div);
